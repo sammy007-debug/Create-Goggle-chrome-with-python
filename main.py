@@ -32,9 +32,9 @@ class MainWindow(QMainWindow):
         reload_btn.triggered.connect(self.browser.reload)
         navbar.addAction(reload_btn)
 
-        home_btn = QAction('Youtube', self)
-        home_btn.triggered.connect(self.navigate_home)
-        navbar.addAction(home_btn)
+        youtube_btn = QAction('Youtube', self)
+        youtube_btn.triggered.connect(self.navigate_youtube)
+        navbar.addAction(youtube_btn)
 
         self.url_bar = QLineEdit()
         self.url_bar.returnPressed.connect(self.navigate_to_url)
@@ -42,7 +42,7 @@ class MainWindow(QMainWindow):
 
         self.browser.urlChanged.connect(self.update_url)
 
-    def navigate_home(self):
+    def navigate_youtube(self):
         self.browser.setUrl(QUrl('https://www.youtube.com/channel/UCEzLeU7OURzqrpOBYHLXf4w'))
 
     def navigate_to_url(self):
